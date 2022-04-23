@@ -1,36 +1,38 @@
-
-      <div class="container">
-        <form action="/product/add-product" method="POST" enctype="multipart/form-data">
-          <div class="form-group">
-            <label></label>
+<div class="container">
+    <form >
+        <div class="form-group">
+            <label>Category Name</label>
             <select name="categoryId" class="form-control">
-                <option value="0">select category</option>
-                <option value=""></option>
-                 
+                <option>Select Category</option>
+                <option (click)="get(cat._id)" *ngFor="let cat of catid" value="{{cat._id}}">{{cat.name}}</option>
             </select>
-          </div>
-          <div class="form-group">
-              <label>Product Name</label>
-              <input type="text" name="productName" class="form-control"/>
-          </div>
-          <div class="form-group">
+        </div>
+        <div class="form-group">
+            <label>Product Name</label>
+            <input [(ngModel)]="name1" type="text" name="productName" class="form-control" />
+        </div>
+        <div class="form-group">
             <label>Price</label>
-            <input type="text" name="productPrice" class="form-control"/>
+            <input [(ngModel)]="price" type="text" name="productPrice" class="form-control" />
         </div>
         <div class="form-group">
             <label>Quantity</label>
-            <input type="number" name="productQty" class="form-control"/>
+            <input [(ngModel)]="stock" type="number" name="productQty" class="form-control" />
         </div>
         <div class="form-group">
             <label>Description</label>
-            <textarea name="description" class="form-control"></textarea>
+            <textarea [(ngModel)]="description" name="description" class="form-control"></textarea>
         </div>
         <div class="form-group">
             <label>Upload image</label>
-            <br><input type="file">
+            <br><input (change)="selectImage($event)" type="file">
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea [(ngModel)]="keyword" name="keyword" class="form-control"></textarea>
         </div>
         <div class="group">
-            <button class="btn btn-primary" type="submit">Add</button>
+            <button class="btn btn-primary" (click)="add()" type="submit">Add</button>
         </div>
-        </form>
-      </div>
+    </form>
+</div>

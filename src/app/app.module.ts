@@ -11,6 +11,10 @@ import { ViewPriestComponent } from './view-priest/view-priest.component';
 import { ViewProductComponent } from './view-product/view-product.component';
 import { ViewCategoryComponent } from './view-category/view-category.component';
 import { OdersComponent } from './oders/oders.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { UserComponent } from './user/user.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +26,12 @@ import { OdersComponent } from './oders/oders.component';
     ViewPriestComponent,
     ViewProductComponent,
     ViewCategoryComponent,
-    OdersComponent
+    OdersComponent,
+    UserComponent,
+    EditCategoryComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
