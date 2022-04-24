@@ -11,11 +11,19 @@ export class EditCategoryComponent implements OnInit {
   name = '';
   type = '';
   image = '';
-  id='';
-  
-  constructor(private edit: CategoryService,private activateRoute:ActivatedRoute) {
-    this.id =<string> this.activateRoute.snapshot.paramMap.get('id');
-    this.edit.viewById(this.id).subscribe(data=>{})
+  id = '';
+
+  constructor(
+    private edit: CategoryService,
+    private activateRoute: ActivatedRoute
+  ) {
+    this.id = <string>this.activateRoute.snapshot.paramMap.get('id');
+    this.edit.viewById(this.id).subscribe((data) => {
+      console.log(data);
+      this.name = data.name;
+      this.type = data.type;
+      this.image = data.image;
+    });
   }
   selectImage(event: any) {
     if (event.target.files.length > 0) {
@@ -29,9 +37,13 @@ export class EditCategoryComponent implements OnInit {
     const formData = new FormData();
     formData.append('name', this.name);
     formData.append('type', this.type);
-    formData.append('image', this.name);
+    formData.append('image', this.image);
     this.edit.editCategory(formData).subscribe((data) => {
       console.log(data);
+      if(data)
+      alert("sucess")
+      else
+      alert("not update ")
     });
   }
 }
