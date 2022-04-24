@@ -33,7 +33,7 @@ export class CategoryService {
   }
   public viewById(cid: string) {
     let view =
-      'https://worship-first-by-tech-priest.herokuapp.com/product-category/view-product-categoryId';
+      'http://localhost:3000/product-category/view-product-categoryId';
     return this.http.post<any>(view, { id:cid });
   }
 }
