@@ -1,50 +1,33 @@
-<p>view-category works!</p>
-<div class="content">
-    <table>
-
-<thead>
-<tr>
-<th scope="col" width="50px">ID</th>
-<th scope="col" width="100px">Name</th>
-<th scope="col" width="290px">Discription</th>
-<th scope="col">Edit/Delete</th>
-
-</tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="Account">#3412</td>
-<td data-label="Due Date"><img src="image/user.png" class="tab-img">agarbatii</td>
-<td data-label="Amount">Lorem ispum dummy text industry.</td>
-<button  class="btn btn-danger">edit</button>
-<button class="btn btn-success">Delete</button>
-
-</tr>
-<tr>
-    <td data-label="Account">#3412</td>
-    <td data-label="Due Date"><img src="image/user.png" class="tab-img">agarbatii</td>
-    <td data-label="Amount">Lorem ispum dummy text industry.</td>
-    <button  class="btn btn-danger">edit</button>
-    <button class="btn btn-success">Delete</button>
-    
-    </tr>
-    <tr>
-        <td data-label="Account">#3412</td>
-        <td data-label="Due Date"><img src="image/user.png" class="tab-img">agarbatii</td>
-        <td data-label="Amount">Lorem ispum dummy text industry.</td>
-        <button  class="btn btn-danger">edit</button>
-        <button class="btn btn-success">Delete</button>
-        
-        </tr>
-        <tr>
-            <td data-label="Account">#3412</td>
-            <td data-label="Due Date"><img src="image/user.png" class="tab-img">agarbatii</td>
-            <td data-label="Amount">Lorem ispum dummy text industry.</td>
-            <button  class="btn btn-danger">edit</button>
-            <button class="btn btn-success">Delete</button>
-            
+<div>
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th class="heading" scope="col">S.NO.</th>
+                <th class="heading" scope="col">NAME</th>
+                <th class="heading" scope="col">IMAGE</th>
+                <th class="heading" scope="col">ACTION</th>
             </tr>
-                        
-</tbody>
-</table>
-</div>
+        </thead>
+        <tbody class="justify-content-center">
+            <tr *ngFor="let category of list; index as i">
+                <th>{{i+1}}</th>
+                <td>{{category.name}}</td>
+                <td>
+                    <img src={{category.image}} width="80px" height="80px">
+                </td>
+                <td>
+                    <div class="dropdown">
+                        <a>
+                            <button class="btn btn-success" style="border: none; background-color: rgb(88, 211, 32);"
+                                class="btn btnn m-lg-2" (click)="edit(category._id)" data-bs-toggle="modal" data-bs-target="#Mod">Edit
+                            </button></a>
+                        <button class="btn btn-danger" style="border: none; background-color: rgb(216, 33, 33);"
+                            type="button" (click)="delete(category._id)" class="btn btnn ">Delete
+                        </button>
+                    </div>
+                </td>
+                <td>
+                </td>
+            </tr>
+        </tbody>
+    </table>
