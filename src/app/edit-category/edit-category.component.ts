@@ -12,7 +12,7 @@ export class EditCategoryComponent implements OnInit {
   type = '';
   image = '';
   id = '';
-
+  newImage='';
   constructor(
     private edit: CategoryService,
     private activateRoute: ActivatedRoute
@@ -28,16 +28,18 @@ export class EditCategoryComponent implements OnInit {
   selectImage(event: any) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
-      this.image = file;
+      this.newImage = file;
       console.log(this.image);
     }
   }
   ngOnInit(): void {}
   public Edit() {
     const formData = new FormData();
+    formData.append('id',this.id);
     formData.append('name', this.name);
     formData.append('type', this.type);
-    formData.append('image', this.image);
+    formData.append('oldImage', this.image);
+    formData.append('image',this.newImage)
     this.edit.editCategory(formData).subscribe((data) => {
       console.log(data);
       if(data)

@@ -3,30 +3,31 @@
   <table>
     <thead>
       <tr>
-        <th scope="col" width="50px">ID</th>
-        <th scope="col" width="100px">Name</th>
-        <th scope="col" width="290px">Address</th>
-        <th scope="col">Date</th>
+        <th scope="col">S.no</th>
+        <th scope="col">product name</th><br>
+        <th scope="col">Address</th>
+        <th scope="col">Date</th><br>
         <th scope="col">Price</th>
         <th scope="col">Status</th>
-        <th scope="col" width="70px">Action</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td data-label="Account">#3412</td>
-        <td data-label="Due Date"><img src="image/user.png" class="tab-img">Manoj</td>
-        <td data-label="Amount">Lorem ispum dummy text industry.</td>
-        <td data-label="Period">03/01/2022</td>
-        <td data-label="Due Date">$64.00</td>
+      <tr *ngFor="let order of orderList index as i">
+        <td data-label="Account">{{i++1}}</td>
+        <td data-label="Due Date">Agarbatti</td><br>
+        <td data-label="Account">{{order.address}}</td>
+        <td data-label="Period">{{order.date}}</td><br>
+        <td data-label="Amount">{{order.amount}}</td>
+        <!-- <td data-label="Due Date">$64.00</td> -->
         <td data-label="Amount" style="position: relative;"><span class="pe"></span>Pending</td>
-        <td data-label="Period"><i class="fa fa-gear ticon"></i>
-
-          <i class="fa fa-angle-down ticon"></i>
-        </td>
+        <button class="btn btn-success" style="border: none; background-color: rgb(88, 211, 32);"
+          class="btn btnn">Complete Order
+        </button>
+        <!-- <i class="fa fa-angle-down ticon"></i> -->
       </tr>
 
-      
+
     </tbody>
   </table>
 </div>

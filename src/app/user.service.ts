@@ -11,4 +11,5 @@ export class UserService {
   public viewUser(): Observable<any> {
     return this.http.get<any>(this.view);
   }
+  
 }

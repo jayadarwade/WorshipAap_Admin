@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -7,8 +8,9 @@ import { ProductService } from '../product.service';
   styleUrls: ['./view-product.component.css'],
 })
 export class ViewProductComponent implements OnInit {
+  
   list: any = [];
-  constructor(private product: ProductService) {}
+  constructor(private product: ProductService,private router:Router) {}
 
   ngOnInit(): void {
     this.product.viewProduct().subscribe((data) => {
@@ -23,5 +25,8 @@ export class ViewProductComponent implements OnInit {
       else alert('Opps something went wrong');
       this.ngOnInit();
     });
+  }
+  edit(cid:string){
+    this.router.navigate(['editProduct',cid])
   }
 }
