@@ -9,4 +9,8 @@ export class AdminDashboardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  signout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem("user");
+  }
 }

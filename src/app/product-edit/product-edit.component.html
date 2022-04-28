@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="form-group">
+  
+      <label>Name</label>
+      <input [(ngModel)]="name" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Price</label>
+      <input [(ngModel)]="price" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Stock</label>
+        <input [(ngModel)]="stock" type="text" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <input [(ngModel)]="description" type="text" class="form-control" />
+      </div>
+      <!-- <div class="form-group">
+        <label>Category</label>
+        <input [(ngModel)]="category" type="text" class="form-control" />
+      </div> -->
+      <div class="form-group">
+        <label>keywords</label>
+        <input [(ngModel)]="keywords" type="text" class="form-control" />
+      </div>
+    <div class="form-group">
+      <label>Current Image</label>
+      <img src='{{image}}' width="80px" height="80px">
+    </div>
+    <div class="form-group">
+      <label>Upload image</label>
+      <br><input type="file" (change)="selectImage($event)" name="image" />
+    </div>
+    <div class="group">
+      <button class="btn btn-primary" (click)="Edit()" type="submit">UpDate</button>
+    </div>
+  </div>

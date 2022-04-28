@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './user/user.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     OdersComponent,
     UserComponent,
     EditCategoryComponent,
+    ProductEditComponent,
+    AdminLoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
